@@ -26,6 +26,8 @@ pub struct Comment {
   #[cfg(feature = "full")]
   #[serde(with = "LtreeDef")]
   pub path: Ltree,
+  #[cfg(not(feature = "full"))]
+  pub path: String,
   pub distinguished: bool,
   pub language_id: LanguageId,
 }
